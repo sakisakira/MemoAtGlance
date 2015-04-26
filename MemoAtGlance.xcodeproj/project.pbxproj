@@ -8,11 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		2F42B96E1AE8034700227CF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B96D1AE8034700227CF2 /* AppDelegate.swift */; };
-		2F42B9701AE8034700227CF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B96F1AE8034700227CF2 /* ViewController.swift */; };
+		2F42B9701AE8034700227CF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B96F1AE8034700227CF2 /* MainViewController.swift */; };
 		2F42B9731AE8034700227CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F42B9711AE8034700227CF2 /* Main.storyboard */; };
 		2F42B9751AE8034700227CF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F42B9741AE8034700227CF2 /* Images.xcassets */; };
 		2F42B9781AE8034700227CF2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42B9761AE8034700227CF2 /* LaunchScreen.xib */; };
 		2F42B9841AE8034700227CF2 /* MemoAtGlanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B9831AE8034700227CF2 /* MemoAtGlanceTests.swift */; };
+		2F42B9961AE804EF00227CF2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B9951AE804EF00227CF2 /* InterfaceController.swift */; };
+		2F42B9981AE804EF00227CF2 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B9971AE804EF00227CF2 /* GlanceController.swift */; };
+		2F42B99A1AE804EF00227CF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F42B9991AE804EF00227CF2 /* Images.xcassets */; };
+		2F42B99E1AE804EF00227CF2 /* MemoAtGlance WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 2F42B99D1AE804EF00227CF2 /* MemoAtGlance WatchKit App.app */; };
+		2F42B9A61AE804EF00227CF2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F42B9A41AE804EF00227CF2 /* Interface.storyboard */; };
+		2F42B9A81AE804EF00227CF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F42B9A71AE804EF00227CF2 /* Images.xcassets */; };
+		2F42B9AB1AE804EF00227CF2 /* MemoAtGlance WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2F42B9911AE804EF00227CF2 /* MemoAtGlance WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2F42B9B51AE805B400227CF2 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B9B41AE805B400227CF2 /* DrawingView.swift */; };
+		2F42B9B71AE806D900227CF2 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B9B61AE806D900227CF2 /* Shared.swift */; };
+		2F7673541AECD93600898F98 /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7673531AECD93600898F98 /* ImageEditorViewController.swift */; };
+		2FE437CC1AE8A54000943297 /* PhotoGrabber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE437CB1AE8A54000943297 /* PhotoGrabber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,19 +34,62 @@
 			remoteGlobalIDString = 2F42B9671AE8034700227CF2;
 			remoteInfo = MemoAtGlance;
 		};
+		2F42B99F1AE804EF00227CF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F42B9601AE8034700227CF2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F42B99C1AE804EF00227CF2;
+			remoteInfo = "MemoAtGlance WatchKit App";
+		};
+		2F42B9A91AE804EF00227CF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F42B9601AE8034700227CF2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F42B9901AE804EF00227CF2;
+			remoteInfo = "MemoAtGlance WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2F42B9B21AE804EF00227CF2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2F42B9AB1AE804EF00227CF2 /* MemoAtGlance WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2F2381ED1AE870A30012C931 /* MemoAtGlance WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MemoAtGlance WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		2F42B9681AE8034700227CF2 /* MemoAtGlance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoAtGlance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F42B96C1AE8034700227CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F42B96D1AE8034700227CF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F42B96F1AE8034700227CF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2F42B96F1AE8034700227CF2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2F42B9721AE8034700227CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F42B9741AE8034700227CF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2F42B9771AE8034700227CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2F42B97D1AE8034700227CF2 /* MemoAtGlanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoAtGlanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F42B9821AE8034700227CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F42B9831AE8034700227CF2 /* MemoAtGlanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAtGlanceTests.swift; sourceTree = "<group>"; };
+		2F42B9911AE804EF00227CF2 /* MemoAtGlance WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MemoAtGlance WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F42B9941AE804EF00227CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F42B9951AE804EF00227CF2 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		2F42B9971AE804EF00227CF2 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		2F42B9991AE804EF00227CF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2F42B99D1AE804EF00227CF2 /* MemoAtGlance WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MemoAtGlance WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F42B9A31AE804EF00227CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F42B9A51AE804EF00227CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		2F42B9A71AE804EF00227CF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2F42B9B31AE8051F00227CF2 /* MemoAtGlance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MemoAtGlance.entitlements; sourceTree = "<group>"; };
+		2F42B9B41AE805B400227CF2 /* DrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		2F42B9B61AE806D900227CF2 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		2F7673531AECD93600898F98 /* ImageEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
+		2FE437CB1AE8A54000943297 /* PhotoGrabber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGrabber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +107,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F42B98E1AE804EF00227CF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -61,6 +122,8 @@
 			children = (
 				2F42B96A1AE8034700227CF2 /* MemoAtGlance */,
 				2F42B9801AE8034700227CF2 /* MemoAtGlanceTests */,
+				2F42B9921AE804EF00227CF2 /* MemoAtGlance WatchKit Extension */,
+				2F42B9A11AE804EF00227CF2 /* MemoAtGlance WatchKit App */,
 				2F42B9691AE8034700227CF2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +133,8 @@
 			children = (
 				2F42B9681AE8034700227CF2 /* MemoAtGlance.app */,
 				2F42B97D1AE8034700227CF2 /* MemoAtGlanceTests.xctest */,
+				2F42B9911AE804EF00227CF2 /* MemoAtGlance WatchKit Extension.appex */,
+				2F42B99D1AE804EF00227CF2 /* MemoAtGlance WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,8 +142,13 @@
 		2F42B96A1AE8034700227CF2 /* MemoAtGlance */ = {
 			isa = PBXGroup;
 			children = (
+				2F42B9B31AE8051F00227CF2 /* MemoAtGlance.entitlements */,
 				2F42B96D1AE8034700227CF2 /* AppDelegate.swift */,
-				2F42B96F1AE8034700227CF2 /* ViewController.swift */,
+				2F42B96F1AE8034700227CF2 /* MainViewController.swift */,
+				2F7673531AECD93600898F98 /* ImageEditorViewController.swift */,
+				2F42B9B41AE805B400227CF2 /* DrawingView.swift */,
+				2FE437CB1AE8A54000943297 /* PhotoGrabber.swift */,
+				2F42B9B61AE806D900227CF2 /* Shared.swift */,
 				2F42B9711AE8034700227CF2 /* Main.storyboard */,
 				2F42B9741AE8034700227CF2 /* Images.xcassets */,
 				2F42B9761AE8034700227CF2 /* LaunchScreen.xib */,
@@ -112,6 +182,44 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2F42B9921AE804EF00227CF2 /* MemoAtGlance WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2F2381ED1AE870A30012C931 /* MemoAtGlance WatchKit Extension.entitlements */,
+				2F42B9951AE804EF00227CF2 /* InterfaceController.swift */,
+				2F42B9971AE804EF00227CF2 /* GlanceController.swift */,
+				2F42B9991AE804EF00227CF2 /* Images.xcassets */,
+				2F42B9931AE804EF00227CF2 /* Supporting Files */,
+			);
+			path = "MemoAtGlance WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		2F42B9931AE804EF00227CF2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F42B9941AE804EF00227CF2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F42B9A11AE804EF00227CF2 /* MemoAtGlance WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				2F42B9A41AE804EF00227CF2 /* Interface.storyboard */,
+				2F42B9A71AE804EF00227CF2 /* Images.xcassets */,
+				2F42B9A21AE804EF00227CF2 /* Supporting Files */,
+			);
+			path = "MemoAtGlance WatchKit App";
+			sourceTree = "<group>";
+		};
+		2F42B9A21AE804EF00227CF2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F42B9A31AE804EF00227CF2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +230,12 @@
 				2F42B9641AE8034700227CF2 /* Sources */,
 				2F42B9651AE8034700227CF2 /* Frameworks */,
 				2F42B9661AE8034700227CF2 /* Resources */,
+				2F42B9B21AE804EF00227CF2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2F42B9AA1AE804EF00227CF2 /* PBXTargetDependency */,
 			);
 			name = MemoAtGlance;
 			productName = MemoAtGlance;
@@ -150,6 +260,39 @@
 			productReference = 2F42B97D1AE8034700227CF2 /* MemoAtGlanceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2F42B9901AE804EF00227CF2 /* MemoAtGlance WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F42B9AF1AE804EF00227CF2 /* Build configuration list for PBXNativeTarget "MemoAtGlance WatchKit Extension" */;
+			buildPhases = (
+				2F42B98D1AE804EF00227CF2 /* Sources */,
+				2F42B98E1AE804EF00227CF2 /* Frameworks */,
+				2F42B98F1AE804EF00227CF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F42B9A01AE804EF00227CF2 /* PBXTargetDependency */,
+			);
+			name = "MemoAtGlance WatchKit Extension";
+			productName = "MemoAtGlance WatchKit Extension";
+			productReference = 2F42B9911AE804EF00227CF2 /* MemoAtGlance WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		2F42B99C1AE804EF00227CF2 /* MemoAtGlance WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F42B9AC1AE804EF00227CF2 /* Build configuration list for PBXNativeTarget "MemoAtGlance WatchKit App" */;
+			buildPhases = (
+				2F42B99B1AE804EF00227CF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MemoAtGlance WatchKit App";
+			productName = "MemoAtGlance WatchKit App";
+			productReference = 2F42B99D1AE804EF00227CF2 /* MemoAtGlance WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,10 +304,29 @@
 				TargetAttributes = {
 					2F42B9671AE8034700227CF2 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3H2MK9FR2S;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					2F42B97C1AE8034700227CF2 = {
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = 2F42B9671AE8034700227CF2;
+					};
+					2F42B9901AE804EF00227CF2 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3H2MK9FR2S;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					2F42B99C1AE804EF00227CF2 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3H2MK9FR2S;
 					};
 				};
 			};
@@ -183,6 +345,8 @@
 			targets = (
 				2F42B9671AE8034700227CF2 /* MemoAtGlance */,
 				2F42B97C1AE8034700227CF2 /* MemoAtGlanceTests */,
+				2F42B9901AE804EF00227CF2 /* MemoAtGlance WatchKit Extension */,
+				2F42B99C1AE804EF00227CF2 /* MemoAtGlance WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +369,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F42B98F1AE804EF00227CF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F42B99A1AE804EF00227CF2 /* Images.xcassets in Resources */,
+				2F42B99E1AE804EF00227CF2 /* MemoAtGlance WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F42B99B1AE804EF00227CF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F42B9A61AE804EF00227CF2 /* Interface.storyboard in Resources */,
+				2F42B9A81AE804EF00227CF2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -212,8 +394,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F42B9701AE8034700227CF2 /* ViewController.swift in Sources */,
+				2F42B9B51AE805B400227CF2 /* DrawingView.swift in Sources */,
+				2F42B9701AE8034700227CF2 /* MainViewController.swift in Sources */,
+				2FE437CC1AE8A54000943297 /* PhotoGrabber.swift in Sources */,
+				2F7673541AECD93600898F98 /* ImageEditorViewController.swift in Sources */,
 				2F42B96E1AE8034700227CF2 /* AppDelegate.swift in Sources */,
+				2F42B9B71AE806D900227CF2 /* Shared.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +411,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F42B98D1AE804EF00227CF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F42B9961AE804EF00227CF2 /* InterfaceController.swift in Sources */,
+				2F42B9981AE804EF00227CF2 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -232,6 +427,16 @@
 			isa = PBXTargetDependency;
 			target = 2F42B9671AE8034700227CF2 /* MemoAtGlance */;
 			targetProxy = 2F42B97E1AE8034700227CF2 /* PBXContainerItemProxy */;
+		};
+		2F42B9A01AE804EF00227CF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F42B99C1AE804EF00227CF2 /* MemoAtGlance WatchKit App */;
+			targetProxy = 2F42B99F1AE804EF00227CF2 /* PBXContainerItemProxy */;
+		};
+		2F42B9AA1AE804EF00227CF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F42B9901AE804EF00227CF2 /* MemoAtGlance WatchKit Extension */;
+			targetProxy = 2F42B9A91AE804EF00227CF2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -250,6 +455,14 @@
 				2F42B9771AE8034700227CF2 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		2F42B9A41AE804EF00227CF2 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F42B9A51AE804EF00227CF2 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -340,9 +553,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MemoAtGlance/MemoAtGlance.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MemoAtGlance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -350,9 +567,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MemoAtGlance/MemoAtGlance.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MemoAtGlance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -390,6 +611,72 @@
 			};
 			name = Release;
 		};
+		2F42B9AD1AE804EF00227CF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = MemoAtGlance_WatchKit_Extension;
+				INFOPLIST_FILE = "MemoAtGlance WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		2F42B9AE1AE804EF00227CF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IBSC_MODULE = MemoAtGlance_WatchKit_Extension;
+				INFOPLIST_FILE = "MemoAtGlance WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		2F42B9B01AE804EF00227CF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "MemoAtGlance WatchKit Extension/MemoAtGlance WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MemoAtGlance WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2F42B9B11AE804EF00227CF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "MemoAtGlance WatchKit Extension/MemoAtGlance WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "MemoAtGlance WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -409,6 +696,7 @@
 				2F42B9891AE8034700227CF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F42B98A1AE8034700227CF2 /* Build configuration list for PBXNativeTarget "MemoAtGlanceTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +705,25 @@
 				2F42B98C1AE8034700227CF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F42B9AC1AE804EF00227CF2 /* Build configuration list for PBXNativeTarget "MemoAtGlance WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F42B9AD1AE804EF00227CF2 /* Debug */,
+				2F42B9AE1AE804EF00227CF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F42B9AF1AE804EF00227CF2 /* Build configuration list for PBXNativeTarget "MemoAtGlance WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F42B9B01AE804EF00227CF2 /* Debug */,
+				2F42B9B11AE804EF00227CF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
