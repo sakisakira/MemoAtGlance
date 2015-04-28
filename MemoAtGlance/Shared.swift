@@ -10,10 +10,13 @@ import Foundation
 import UIKit
 
 let AppGroupID = "group.jp.sakira"
-let MaxNumberOfImages = 8
-let ImageSize = CGSizeMake(280, 280)
-let WatchImageSize = CGSizeMake(140, 140)
-let ImageDirectoryName = "MemoAtGlanceImages"
+let MaxNumberOfImages = 20
+let ImageSize = CGSizeMake(312, 312)
+let WatchImageSize = CGSizeMake(312, 312)
+let ImageDirectoryName = "MemoAtGlance_Images"
+let Key_ImageFilesInWatch = "MemoAtGlance_ImageFilesInWatch"
+let Key_UpdatedFilenames = "MemoAtGlance_UpdatedFilenames"
+let Key_Selectedfilename = "MemoAtGlance_SelectedFilename"
 
 func FilenameOfDate(date: NSDate) -> String {
   let f = NSDateFormatter()
@@ -58,9 +61,14 @@ func ImageOfFilename(fn: String) -> UIImage? {
   return nil
 }
 
-func JPEGDataOfDate(date: NSDate) -> NSData? {
-  if let img = ImageOfDate(date) {
-    let jpg = UIImageJPEGRepresentation(img, 0.9)
+func JPEGDataOfFilename(fn: String) -> NSData? {
+  if let simg = ImageOfFilename(fn) {
+    UIGraphicsBeginImageContext(WatchImageSize)
+    simg.drawInRect(CGRectMake(0, 0, WatchImageSize.width, WatchImageSize.height))
+    let dimg = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    let jpg = UIImageJPEGRepresentation(dimg, 0.9)
     return jpg
   }
   return nil

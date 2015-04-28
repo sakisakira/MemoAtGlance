@@ -50,7 +50,7 @@ class DrawingView : UIView {
 
   var initialDrawRect = true
   override func drawRect(rect: CGRect) {
-    NSLog("DrawingView drawRect()")
+//    NSLog("DrawingView drawRect()")
     if initialDrawRect {
       UIColor.clearColor().set()
       UIRectFill(self.frame)

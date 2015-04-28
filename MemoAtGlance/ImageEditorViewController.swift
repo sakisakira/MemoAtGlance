@@ -33,6 +33,7 @@ class ImageEditorViewController: UIViewController {
         let img = composeImages(img0, drawingView.image)
         if let png = UIImagePNGRepresentation(img) {
           png.writeToURL(url, atomically: true)
+          markUpdateFlag(url)
           if let vc = self.presentingViewController as? MainViewController {
             vc.collectionView.reloadData()
           }
@@ -50,6 +51,15 @@ class ImageEditorViewController: UIViewController {
     let img = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     return img
+  }
+  
+  private func markUpdateFlag(url: NSURL?) {
+    if let fn = url?.pathComponents?.last as? String {
+      let defs = NSUserDefaults(suiteName: AppGroupID)
+      var fns = defs?.stringArrayForKey(Key_UpdatedFilenames) ?? [] as [String]
+      fns.append(fn)
+      defs?.setObject(fns, forKey: Key_UpdatedFilenames)
+    }
   }
   
   @IBAction func cancelButtonPressed(sender: UIButton) {

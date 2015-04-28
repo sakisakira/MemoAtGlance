@@ -16,6 +16,7 @@ class PhotoGrabber {
     createImageDirectory()
   }
   
+  // do not call this func. from WatchKit Extension
   func grabRecentPhotos()  {
     var new_dates = [] as [NSDate]
     

@@ -1,29 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3734"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MemoAtGlance_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="8H0-49-Lbw">
+                            <items>
+                                <tableRow identifier="MainRow" id="HVq-NQ-7yf" customClass="MainRow" customModule="MemoAtGlance_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="65" alignment="left" id="5fP-8a-0Sg">
+                                        <items>
+                                            <imageView width="1" height="65" alignment="left" contentMode="scaleAspectFill" id="pJh-Zt-fyk"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="pJh-Zt-fyk" id="ic2-nK-sJ9"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="8H0-49-Lbw" id="MNi-Eo-KHf"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="164" y="217"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">
             <objects>
-                <glanceController spacing="0.0" id="Sv0-Ai-Zie" customClass="GlanceController" customModuleProvider="target">
+                <glanceController spacing="0.0" topTemplateType="body3" id="Sv0-Ai-Zie" customClass="GlanceController" customModule="MemoAtGlance_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="gv7-I2-MZq"/>
-                        <group alignment="left" id="eew-Gs-W6Y"/>
+                        <label alignment="left" text="Memo@Glance" id="mZO-w0-yHG"/>
+                        <group alignment="left" id="eew-Gs-W6Y">
+                            <items>
+                                <imageView width="1" height="1" alignment="left" contentMode="scaleAspectFill" id="zQi-qV-idU"/>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="image" destination="zQi-qV-idU" id="KXq-Wr-k3w"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="164" y="514"/>
+        </scene>
+        <!--DetailInterfaceController-->
+        <scene sceneID="Prv-3U-Eir">
+            <objects>
+                <controller identifier="DetailInterfaceController" id="7iX-FJ-HS9" customClass="DetailInterfaceController" customModule="MemoAtGlance_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="162" alignment="left" layout="vertical" id="jzS-uU-4uq">
+                            <items>
+                                <label width="135" height="21" alignment="left" text="sent to Glance:" id="xDf-e0-CCD">
+                                    <color key="textColor" red="0.98752065150000001" green="1" blue="0.59672956840000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <imageView width="133" height="133" alignment="left" contentMode="scaleAspectFill" id="ARD-1T-AZ0"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="ARD-1T-AZ0" id="JHJ-16-4aQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="459" y="106.5"/>
+        </scene>
+        <!--NoPhotoMessageInterfaceController-->
+        <scene sceneID="rB5-rA-G0Z">
+            <objects>
+                <controller identifier="NoPhotoMessageInterfaceController" id="IBk-Ex-CKZ" customClass="NoPhotoMessageInterfaceController" customModule="MemoAtGlance_WatchKit_Extension">
+                    <items>
+                        <label width="136" height="144" alignment="left" textAlignment="left" numberOfLines="0" id="Q8o-Ji-bPI">
+                            <string key="text">No memo has been found in myself. 
+
+Please launch Memo@Glance in your iPhone.</string>
+                            <color key="textColor" red="1" green="0.95016873830000004" blue="0.46320063210000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="471" y="360"/>
         </scene>
     </scenes>
 </document>

@@ -11,21 +11,68 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
+  @IBOutlet weak var table: WKInterfaceTable!
+  
+  let imageFetcher = ImageFetcher()
+  var timer: NSTimer?
+  var lastImageNames: [String]?
+  
+  
+  override func awakeWithContext(context: AnyObject?) {
+    super.awakeWithContext(context)
+  }
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
-        
-        // Configure interface objects here.
+  override func willActivate() {
+    super.willActivate()
+    
+    timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "checkPhotos", userInfo: nil, repeats: true)
+  }
+
+  override func didDeactivate() {
+    super.didDeactivate()
+    
+    timer?.invalidate()
+    timer = nil
+  }
+  
+  @objc
+  private func checkPhotos() {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+      self.imageFetcher.update()
+    })
+    let image_names = imageFetcher.imageNames
+    if (lastImageNames == nil || image_names != lastImageNames!) {
+      if image_names.count > 0 {
+        configureTable()
+      } else {
+        displayNoImageMessage()
+      }
     }
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
+    lastImageNames = image_names
+    NSLog("checkPhotos \(image_names.count)")
+  }
+  
+  private func configureTable() {
+    let image_names = imageFetcher.imageNameDatas
+    let num = image_names.count
+    table.setNumberOfRows(num, withRowType: "MainRow")
+    for i in 0 ..< num {
+      let row = table.rowControllerAtIndex(i) as! MainRow
+      row.image.setImageNamed(image_names[i].name)
     }
+  }
+  
+  private func displayNoImageMessage() {
+    presentControllerWithName("NoPhotoMessageInterfaceController", context: nil)
+  }
+  
+  override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+    let name = imageFetcher.imageNameDatas[rowIndex].name
+    presentControllerWithName("DetailInterfaceController", context: name)
+  }
+  
+}
 
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
-
+class MainRow : NSObject {
+  @IBOutlet weak var image: WKInterfaceImage!
 }

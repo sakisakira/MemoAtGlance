@@ -22,8 +22,12 @@
 		2F42B9AB1AE804EF00227CF2 /* MemoAtGlance WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2F42B9911AE804EF00227CF2 /* MemoAtGlance WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2F42B9B51AE805B400227CF2 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B9B41AE805B400227CF2 /* DrawingView.swift */; };
 		2F42B9B71AE806D900227CF2 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B9B61AE806D900227CF2 /* Shared.swift */; };
+		2F44E8731AEF05AE00AE6318 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F44E8721AEF05AE00AE6318 /* ImageFetcher.swift */; };
+		2F6E34351AEDB4AB0072F19D /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B9B61AE806D900227CF2 /* Shared.swift */; };
 		2F7673541AECD93600898F98 /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7673531AECD93600898F98 /* ImageEditorViewController.swift */; };
 		2FE437CC1AE8A54000943297 /* PhotoGrabber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE437CB1AE8A54000943297 /* PhotoGrabber.swift */; };
+		2FF79B071AEF37DD001A5726 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF79B061AEF37DD001A5726 /* DetailInterfaceController.swift */; };
+		2FF79B091AEF3855001A5726 /* NoPhotoMessageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF79B081AEF3855001A5726 /* NoPhotoMessageInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,8 +92,11 @@
 		2F42B9B31AE8051F00227CF2 /* MemoAtGlance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MemoAtGlance.entitlements; sourceTree = "<group>"; };
 		2F42B9B41AE805B400227CF2 /* DrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		2F42B9B61AE806D900227CF2 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		2F44E8721AEF05AE00AE6318 /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		2F7673531AECD93600898F98 /* ImageEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
 		2FE437CB1AE8A54000943297 /* PhotoGrabber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGrabber.swift; sourceTree = "<group>"; };
+		2FF79B061AEF37DD001A5726 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
+		2FF79B081AEF3855001A5726 /* NoPhotoMessageInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoPhotoMessageInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +194,9 @@
 			children = (
 				2F2381ED1AE870A30012C931 /* MemoAtGlance WatchKit Extension.entitlements */,
 				2F42B9951AE804EF00227CF2 /* InterfaceController.swift */,
+				2FF79B061AEF37DD001A5726 /* DetailInterfaceController.swift */,
+				2F44E8721AEF05AE00AE6318 /* ImageFetcher.swift */,
+				2FF79B081AEF3855001A5726 /* NoPhotoMessageInterfaceController.swift */,
 				2F42B9971AE804EF00227CF2 /* GlanceController.swift */,
 				2F42B9991AE804EF00227CF2 /* Images.xcassets */,
 				2F42B9931AE804EF00227CF2 /* Supporting Files */,
@@ -416,7 +426,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F42B9961AE804EF00227CF2 /* InterfaceController.swift in Sources */,
+				2F44E8731AEF05AE00AE6318 /* ImageFetcher.swift in Sources */,
+				2F6E34351AEDB4AB0072F19D /* Shared.swift in Sources */,
+				2FF79B091AEF3855001A5726 /* NoPhotoMessageInterfaceController.swift in Sources */,
 				2F42B9981AE804EF00227CF2 /* GlanceController.swift in Sources */,
+				2FF79B071AEF37DD001A5726 /* DetailInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

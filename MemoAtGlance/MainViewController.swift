@@ -16,12 +16,16 @@ class MainViewController: UIViewController,
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    collectionView.reloadData()
   }
 
   // UICollectionViewDataSource
@@ -36,13 +40,13 @@ class MainViewController: UIViewController,
     if let image = ImageOfFilename(fn) {
       cell.imageView.image = image
     } else {
-      // ToDo: 再読み込み
+      NSTimer.scheduledTimerWithTimeInterval(1, target: collectionView, selector: "reloadData", userInfo: nil, repeats: false)
     }
     return cell
   }
   
   // UICollectionViewDelegate
-  func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     let index = indexPath.row
     if let image = (collectionView.cellForItemAtIndexPath(indexPath) as? MainCell)?.imageView.image {
       if let vc = storyboard?.instantiateViewControllerWithIdentifier("ImageEditorViewController") as? ImageEditorViewController {
