@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 let AppGroupID = "group.jp.sakira"
-let MaxNumberOfImages = 20
-let ImageSize = CGSizeMake(312, 312)
+let MaxNumberOfImages = 12
+let ImageSize = CGSizeMake(280, 280)
 let WatchImageSize = CGSizeMake(312, 312)
 let ImageDirectoryName = "MemoAtGlance_Images"
 let Key_ImageFilesInWatch = "MemoAtGlance_ImageFilesInWatch"
@@ -39,12 +39,18 @@ func ImageExistsOfDate(date: NSDate) -> Bool {
   return false
 }
 
+private func ImageOfData(data: NSData) -> UIImage? {
+  if let img = UIImage(data: data,
+    scale: UIScreen.mainScreen().scale) {
+      return img
+  }
+  return nil
+}
+
 func ImageOfDate(date: NSDate) -> UIImage? {
   if let url = FileURLOfDate(date) {
     if let png = NSData(contentsOfURL: url) {
-      if let img = UIImage(data: png) {
-        return img
-      }
+      return ImageOfData(png)
     }
   }
   return nil
@@ -53,9 +59,7 @@ func ImageOfDate(date: NSDate) -> UIImage? {
 func ImageOfFilename(fn: String) -> UIImage? {
   if let url = FileURLOfFilename(fn) {
     if let png = NSData(contentsOfURL: url) {
-      if let img = UIImage(data: png) {
-        return img
-      }
+      return ImageOfData(png)
     }
   }
   return nil

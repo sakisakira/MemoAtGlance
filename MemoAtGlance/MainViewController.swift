@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController,
   UICollectionViewDelegate, UICollectionViewDataSource {
   @IBOutlet weak var collectionView: UICollectionView!
+  var timer: NSTimer?
   
   var photoGrabber = PhotoGrabber()
   
@@ -25,7 +26,20 @@ class MainViewController: UIViewController,
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
-    collectionView.reloadData()
+//    collectionView.reloadData()
+    
+    timer = NSTimer.scheduledTimerWithTimeInterval(1,
+      target: collectionView,
+      selector: "reloadData",
+      userInfo: nil,
+      repeats: true)
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    timer?.invalidate()
+    timer = nil
   }
 
   // UICollectionViewDataSource

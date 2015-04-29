@@ -40,7 +40,7 @@ class DrawingView : UIView {
   }
   
   private func clearImageOfSize(size: CGSize) -> UIImage {
-    UIGraphicsBeginImageContext(size)
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
     UIColor.clearColor().set()
     UIRectFill(CGRectMake(0, 0, size.width, size.height))
     let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -62,7 +62,7 @@ class DrawingView : UIView {
   }
   
   private func imageOfCanvas(rect :CGRect) -> UIImage {
-    UIGraphicsBeginImageContext(rect.size)
+    UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
     let opt = rect.origin
     canvas.drawAtPoint(CGPointMake(-opt.x, -opt.y))
     let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -72,7 +72,7 @@ class DrawingView : UIView {
   
   private func imageDrawnLine(image: UIImage,
     fromPoint pt0: CGPoint, toPoint pt1: CGPoint) -> UIImage {
-    UIGraphicsBeginImageContext(image.size)
+    UIGraphicsBeginImageContextWithOptions(image.size, false, 0)
     image.drawAtPoint(CGPointZero)
     let path = UIBezierPath()
     path.moveToPoint(pt0)

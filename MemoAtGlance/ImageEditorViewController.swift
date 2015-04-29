@@ -45,7 +45,7 @@ class ImageEditorViewController: UIViewController {
   }
   
   private func composeImages(img0: UIImage, _ img1: UIImage) -> UIImage {
-    UIGraphicsBeginImageContext(img0.size)
+    UIGraphicsBeginImageContextWithOptions(img0.size, false, 0)
     img0.drawAtPoint(CGPointZero)
     img1.drawAtPoint(CGPointZero)
     let img = UIGraphicsGetImageFromCurrentImageContext()

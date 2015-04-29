@@ -25,7 +25,11 @@ class InterfaceController: WKInterfaceController {
   override func willActivate() {
     super.willActivate()
     
-    timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "checkPhotos", userInfo: nil, repeats: true)
+    timer = NSTimer.scheduledTimerWithTimeInterval(2,
+      target: self,
+      selector: "checkPhotos",
+      userInfo: nil,
+      repeats: true)
   }
 
   override func didDeactivate() {

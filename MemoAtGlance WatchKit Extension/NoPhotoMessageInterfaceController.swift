@@ -11,4 +11,13 @@ import WatchKit
 
 class NoPhotoMessageInterfaceController : WKInterfaceController {
   
+  override func willActivate() {
+    super.willActivate()
+    
+    NSTimer.scheduledTimerWithTimeInterval(3,
+      target: self,
+      selector: "dismissController",
+      userInfo: nil,
+      repeats: false)
+  }
 }

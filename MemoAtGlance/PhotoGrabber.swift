@@ -20,10 +20,14 @@ class PhotoGrabber {
   func grabRecentPhotos()  {
     var new_dates = [] as [NSDate]
     
-    var options = PHFetchOptions()
-    options.sortDescriptors =
+    let fetch_opt = PHFetchOptions()
+    fetch_opt.sortDescriptors =
       [NSSortDescriptor(key: "creationDate", ascending: false)]
-    let assets = PHAsset.fetchAssetsWithMediaType(.Image, options: options)
+    let assets = PHAsset.fetchAssetsWithMediaType(.Image, options: fetch_opt)
+    
+    let req_opt = PHImageRequestOptions()
+    req_opt.synchronous = true
+    req_opt.deliveryMode = .HighQualityFormat
     
     let manager = PHImageManager()
     assets.enumerateObjectsUsingBlock {
@@ -33,7 +37,7 @@ class PhotoGrabber {
       manager.requestImageForAsset(asset as! PHAsset,
         targetSize: ImageSize,
         contentMode: PHImageContentMode.AspectFill,
-        options: nil, resultHandler:
+        options: req_opt, resultHandler:
         {(image, info) in
           NSLog("found photo at \(date)")
           if !ImageExistsOfDate(date) {
@@ -97,7 +101,7 @@ class PhotoGrabber {
   }
   
   private func resizeImage(image: UIImage) -> UIImage {
-    UIGraphicsBeginImageContext(ImageSize)
+    UIGraphicsBeginImageContextWithOptions(ImageSize, false, 0)
     let iw = min(image.size.width, image.size.height)
     let ratio = ImageSize.width / iw
     image.drawInRect(CGRectMake(0, 0, image.size.width * ratio, image.size.height * ratio))
