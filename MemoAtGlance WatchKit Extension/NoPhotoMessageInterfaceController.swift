@@ -14,6 +14,8 @@ class NoPhotoMessageInterfaceController : WKInterfaceController {
   override func willActivate() {
     super.willActivate()
     
+    setTitle("Close")
+    
     NSTimer.scheduledTimerWithTimeInterval(3,
       target: self,
       selector: "dismissController",

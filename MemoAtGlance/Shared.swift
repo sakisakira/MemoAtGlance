@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 let AppGroupID = "group.jp.sakira"
-let MaxNumberOfImages = 12
+let MaxNumberOfImages = 8
 let ImageSize = CGSizeMake(280, 280)
 let WatchImageSize = CGSizeMake(312, 312)
 let ImageDirectoryName = "MemoAtGlance_Images"
@@ -89,9 +89,11 @@ func FilenamesSortedForImages() -> [String] {
   let fm = NSFileManager.defaultManager()
   let baseURL = fm.containerURLForSecurityApplicationGroupIdentifier(AppGroupID)
   if let dirURL = baseURL?.URLByAppendingPathComponent(ImageDirectoryName) {
-    if let fns = fm.contentsOfDirectoryAtPath(dirURL.path!, error: nil) as? [String] {
+    var error: NSError?
+    if let fns = fm.contentsOfDirectoryAtPath(dirURL.path!, error: &error) as? [String] {
       return fns.sorted {$0 < $1}
     }
+    NSLog("FilenamesSortedForImages() error: \(error)")
   }
   return []
 }

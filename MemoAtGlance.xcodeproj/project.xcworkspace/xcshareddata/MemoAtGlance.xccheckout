@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>5FDC8CF1-A80C-4268-A9D4-7BEC2D99FD78</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>MemoAtGlance</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3672C7292A8581420910B0C263177C72C00BBBBE</key>
 		<string>https://github.com/sakisakira/MemoAtGlance.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MemoAtGlance.xcodeproj/project.xcworkspace</string>
+	<string>MemoAtGlance.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3672C7292A8581420910B0C263177C72C00BBBBE</key>

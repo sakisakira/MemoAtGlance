@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AssetsLibrary
 
 class MainViewController: UIViewController,
   UICollectionViewDelegate, UICollectionViewDataSource {
@@ -23,29 +24,49 @@ class MainViewController: UIViewController,
     super.didReceiveMemoryWarning()
   }
   
-  override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
     
 //    collectionView.reloadData()
     
-    timer = NSTimer.scheduledTimerWithTimeInterval(1,
+    timer = NSTimer.scheduledTimerWithTimeInterval(5,
       target: collectionView,
       selector: "reloadData",
       userInfo: nil,
       repeats: true)
   }
   
-  override func viewWillDisappear(animated: Bool) {
-    super.viewWillDisappear(animated)
+  override func viewDidDisappear(animated: Bool) {
+    super.viewDidDisappear(animated)
     
     timer?.invalidate()
     timer = nil
   }
-
+  
   // UICollectionViewDataSource
+  var alertController: UIAlertController?
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    photoGrabber.grabRecentPhotos()
-    return photoGrabber.filenamesSorted.count
+    switch ALAssetsLibrary.authorizationStatus() {
+    case .NotDetermined, .Authorized:
+      //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+      self.photoGrabber.grabRecentPhotos()
+      //    })
+      return photoGrabber.filenamesSorted.count
+    case .Restricted, .Denied:
+      if alertController == nil {
+        alertController = UIAlertController(title: "Photo Album Accessing",
+          message: "Please allow accessing to your Photo Album.",
+          preferredStyle: .Alert)
+        alertController?.addAction(
+          UIAlertAction(title: "OK",
+            style: .Default,
+            handler: {action in self.alertController = nil}))
+        presentViewController(alertController!,
+          animated: true,
+          completion: nil)
+      }
+        return 0
+    }
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

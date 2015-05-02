@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--InterfaceController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MemoAtGlance_WatchKit_Extension">
+                <controller identifier="InterfaceController" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MemoAtGlance_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="8H0-49-Lbw">
                             <items>
@@ -25,6 +25,20 @@
                             </items>
                         </table>
                     </items>
+                    <menu key="menu" id="yst-J6-R4P">
+                        <items>
+                            <menuItem title="Clear Cash in Watch" icon="accept" id="f9T-De-i0W">
+                                <connections>
+                                    <action selector="clearItemSelected" destination="AgC-eL-Hgc" id="522-GC-3Ch"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Reload from Album" icon="resume" id="Aww-0P-ouR" userLabel="Reload">
+                                <connections>
+                                    <action selector="reloadItemSelected" destination="AgC-eL-Hgc" id="7Nc-i6-vAp"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="table" destination="8H0-49-Lbw" id="MNi-Eo-KHf"/>
                     </connections>

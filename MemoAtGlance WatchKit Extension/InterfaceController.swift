@@ -24,31 +24,36 @@ class InterfaceController: WKInterfaceController {
 
   override func willActivate() {
     super.willActivate()
-    
-    timer = NSTimer.scheduledTimerWithTimeInterval(2,
-      target: self,
-      selector: "checkPhotos",
-      userInfo: nil,
-      repeats: true)
+    startTimer()
   }
 
   override func didDeactivate() {
     super.didDeactivate()
     
+    stopTimer()
+  }
+  
+  private func startTimer() {
+    timer = NSTimer.scheduledTimerWithTimeInterval(5,
+      target: self,
+      selector: "checkPhotos",
+      userInfo: nil,
+      repeats: true)
+  }
+  private func stopTimer() {
     timer?.invalidate()
     timer = nil
   }
   
   @objc
   private func checkPhotos() {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
       self.imageFetcher.update()
-    })
+//    })
     let image_names = imageFetcher.imageNames
     if (lastImageNames == nil || image_names != lastImageNames!) {
-      if image_names.count > 0 {
-        configureTable()
-      } else {
+      configureTable()
+      if image_names.count == 0 {
         displayNoImageMessage()
       }
     }
@@ -71,10 +76,43 @@ class InterfaceController: WKInterfaceController {
   }
   
   override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+    if rowIndex >= imageFetcher.imageNameDatas.count {return}
+    
+    stopTimer()
     let name = imageFetcher.imageNameDatas[rowIndex].name
     presentControllerWithName("DetailInterfaceController", context: name)
   }
   
+  // menu items
+  @IBAction func clearItemSelected() {
+    NSLog("clearItemSelected()")
+    let defs = NSUserDefaults(suiteName: AppGroupID)
+    defs?.setObject([] as [String], forKey: Key_ImageFilesInWatch)
+    defs?.synchronize()
+    
+    let device = WKInterfaceDevice.currentDevice()
+    device.removeAllCachedImages()
+    
+    checkPhotos()
+    stopTimer()
+    startTimer()
+  }
+  
+  @IBAction func reloadItemSelected() {
+    NSLog("reloadItemSelected()")
+    let info = ["Reload" : "Albums"]
+    let result =
+    WKInterfaceController.openParentApplication(info, reply:
+      {reply in
+        NSLog("reloadItemSelected reply received \(reply)")
+        self.checkPhotos()
+      })
+    NSLog("reloadItemSelected result \(result)")
+    
+    checkPhotos()
+    stopTimer()
+    startTimer()
+  }
 }
 
 class MainRow : NSObject {

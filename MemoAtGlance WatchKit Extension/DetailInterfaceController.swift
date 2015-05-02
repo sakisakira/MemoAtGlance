@@ -15,8 +15,10 @@ class DetailInterfaceController : WKInterfaceController {
   override func awakeWithContext(context: AnyObject?) {
     super.awakeWithContext(context)
     
+    setTitle("Close")
+    
     if let name = context as? String {
-      self.image.setImageNamed(name)
+      image.setImageNamed(name)
       let result = saveFilename(name)
       NSLog("saved \(result) #\(name) to glance.")
     }

@@ -12,13 +12,10 @@ import Photos
 class PhotoGrabber {
   var filenamesSorted = [] as [String]
   
-  init() {
-    createImageDirectory()
-  }
-  
   // do not call this func. from WatchKit Extension
-  func grabRecentPhotos()  {
+  func grabRecentPhotos() {
     var new_dates = [] as [NSDate]
+    createImageDirectory()
     
     let fetch_opt = PHFetchOptions()
     fetch_opt.sortDescriptors =
@@ -32,21 +29,22 @@ class PhotoGrabber {
     let manager = PHImageManager()
     assets.enumerateObjectsUsingBlock {
       (asset, index, stop) -> Void in
-      let date = asset.creationDate as NSDate
-      self.touchImageFile(ofDate: date)
-      manager.requestImageForAsset(asset as! PHAsset,
-        targetSize: ImageSize,
-        contentMode: PHImageContentMode.AspectFill,
-        options: req_opt, resultHandler:
-        {(image, info) in
-          NSLog("found photo at \(date)")
-          if !ImageExistsOfDate(date) {
-            self.savePhoto(self.resizeImage(image), forDate: date)
-          }
-          new_dates.append(date)
-      })
       if index >= MaxNumberOfImages {
         stop.initialize(true)
+      } else {
+        let date = asset.creationDate as NSDate
+        self.touchImageFile(ofDate: date)
+        manager.requestImageForAsset(asset as! PHAsset,
+          targetSize: ImageSize,
+          contentMode: PHImageContentMode.AspectFill,
+          options: req_opt, resultHandler:
+          {(image, info) in
+            NSLog("found photo at \(date)")
+            if !ImageExistsOfDate(date) {
+              self.savePhoto(self.resizeImage(image), forDate: date)
+            }
+            new_dates.append(date)
+        })
       }
     }
     
@@ -54,7 +52,7 @@ class PhotoGrabber {
     filenamesSorted = FilenamesSortedForImages()
     NSLog("filenames = \(filenamesSorted)")
   }
-  
+    
   private func createImageDirectory() {
     let fm = NSFileManager.defaultManager()
     if let dir_url = fm.containerURLForSecurityApplicationGroupIdentifier(AppGroupID)?.URLByAppendingPathComponent(ImageDirectoryName) {

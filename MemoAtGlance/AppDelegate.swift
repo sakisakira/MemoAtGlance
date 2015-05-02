@@ -15,8 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Override point for customization after application launch.
     return true
+  }
+  
+  func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+    let grabber = PhotoGrabber()
+    grabber.clearPhotos()
+    grabber.grabRecentPhotos()
+    reply(["Reloaded" : "Album"])
   }
 
   func applicationWillResignActive(application: UIApplication) {
