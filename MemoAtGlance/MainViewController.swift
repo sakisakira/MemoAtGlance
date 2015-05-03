@@ -8,6 +8,7 @@
 
 import UIKit
 import AssetsLibrary
+import Photos
 
 class MainViewController: UIViewController,
   UICollectionViewDelegate, UICollectionViewDataSource {
@@ -27,8 +28,6 @@ class MainViewController: UIViewController,
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     
-//    collectionView.reloadData()
-    
     timer = NSTimer.scheduledTimerWithTimeInterval(5,
       target: collectionView,
       selector: "reloadData",
@@ -47,10 +46,23 @@ class MainViewController: UIViewController,
   var alertController: UIAlertController?
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     switch ALAssetsLibrary.authorizationStatus() {
-    case .NotDetermined, .Authorized:
-      //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+    case .NotDetermined:
+      var num = 0
+      PHPhotoLibrary.requestAuthorization(
+        {status in
+          switch status {
+          case .Authorized:
+            self.photoGrabber.grabRecentPhotos()
+            num = self.photoGrabber.filenamesSorted.count
+          case .Restricted, .Denied:
+            num = 0
+          default:
+            num = 0
+          }
+        })
+      return num
+    case .Authorized:
       self.photoGrabber.grabRecentPhotos()
-      //    })
       return photoGrabber.filenamesSorted.count
     case .Restricted, .Denied:
       if alertController == nil {

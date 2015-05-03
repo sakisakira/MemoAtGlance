@@ -8,8 +8,10 @@
 	<string>MemoAtGlance</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIcons</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
-	<string>jp.sakira.MemoAtGlance.watchkitapp</string>
+	<string>jp.sakira.MemoAtWatch.watchkitapp</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -17,18 +19,18 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>20150503.2337</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>jp.sakira.MemoAtGlance</string>
+	<string>jp.sakira.MemoAtWatch</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

@@ -11,8 +11,6 @@
 		2F42B9701AE8034700227CF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B96F1AE8034700227CF2 /* MainViewController.swift */; };
 		2F42B9731AE8034700227CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F42B9711AE8034700227CF2 /* Main.storyboard */; };
 		2F42B9751AE8034700227CF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F42B9741AE8034700227CF2 /* Images.xcassets */; };
-		2F42B9781AE8034700227CF2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F42B9761AE8034700227CF2 /* LaunchScreen.xib */; };
-		2F42B9841AE8034700227CF2 /* MemoAtGlanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B9831AE8034700227CF2 /* MemoAtGlanceTests.swift */; };
 		2F42B9961AE804EF00227CF2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B9951AE804EF00227CF2 /* InterfaceController.swift */; };
 		2F42B9981AE804EF00227CF2 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42B9971AE804EF00227CF2 /* GlanceController.swift */; };
 		2F42B99A1AE804EF00227CF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F42B9991AE804EF00227CF2 /* Images.xcassets */; };
@@ -31,13 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2F42B97E1AE8034700227CF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2F42B9601AE8034700227CF2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2F42B9671AE8034700227CF2;
-			remoteInfo = MemoAtGlance;
-		};
 		2F42B99F1AE804EF00227CF2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2F42B9601AE8034700227CF2 /* Project object */;
@@ -51,6 +42,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2F42B9901AE804EF00227CF2;
 			remoteInfo = "MemoAtGlance WatchKit Extension";
+		};
+		2F577D4D1AF59BAB00FB37A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F42B9601AE8034700227CF2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F42B99C1AE804EF00227CF2;
+			remoteInfo = "MemoAtGlance WatchKit App";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -77,7 +75,6 @@
 		2F42B9721AE8034700227CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F42B9741AE8034700227CF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2F42B9771AE8034700227CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2F42B97D1AE8034700227CF2 /* MemoAtGlanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoAtGlanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F42B9821AE8034700227CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F42B9831AE8034700227CF2 /* MemoAtGlanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAtGlanceTests.swift; sourceTree = "<group>"; };
 		2F42B9911AE804EF00227CF2 /* MemoAtGlance WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MemoAtGlance WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,13 +98,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		2F42B9651AE8034700227CF2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2F42B97A1AE8034700227CF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -139,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				2F42B9681AE8034700227CF2 /* MemoAtGlance.app */,
-				2F42B97D1AE8034700227CF2 /* MemoAtGlanceTests.xctest */,
 				2F42B9911AE804EF00227CF2 /* MemoAtGlance WatchKit Extension.appex */,
 				2F42B99D1AE804EF00227CF2 /* MemoAtGlance WatchKit App.app */,
 			);
@@ -246,29 +235,12 @@
 			);
 			dependencies = (
 				2F42B9AA1AE804EF00227CF2 /* PBXTargetDependency */,
+				2F577D4E1AF59BAB00FB37A5 /* PBXTargetDependency */,
 			);
 			name = MemoAtGlance;
 			productName = MemoAtGlance;
 			productReference = 2F42B9681AE8034700227CF2 /* MemoAtGlance.app */;
 			productType = "com.apple.product-type.application";
-		};
-		2F42B97C1AE8034700227CF2 /* MemoAtGlanceTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2F42B98A1AE8034700227CF2 /* Build configuration list for PBXNativeTarget "MemoAtGlanceTests" */;
-			buildPhases = (
-				2F42B9791AE8034700227CF2 /* Sources */,
-				2F42B97A1AE8034700227CF2 /* Frameworks */,
-				2F42B97B1AE8034700227CF2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2F42B97F1AE8034700227CF2 /* PBXTargetDependency */,
-			);
-			name = MemoAtGlanceTests;
-			productName = MemoAtGlanceTests;
-			productReference = 2F42B97D1AE8034700227CF2 /* MemoAtGlanceTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		2F42B9901AE804EF00227CF2 /* MemoAtGlance WatchKit Extension */ = {
 			isa = PBXNativeTarget;
@@ -321,10 +293,6 @@
 							};
 						};
 					};
-					2F42B97C1AE8034700227CF2 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 2F42B9671AE8034700227CF2;
-					};
 					2F42B9901AE804EF00227CF2 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 3H2MK9FR2S;
@@ -354,7 +322,6 @@
 			projectRoot = "";
 			targets = (
 				2F42B9671AE8034700227CF2 /* MemoAtGlance */,
-				2F42B97C1AE8034700227CF2 /* MemoAtGlanceTests */,
 				2F42B9901AE804EF00227CF2 /* MemoAtGlance WatchKit Extension */,
 				2F42B99C1AE804EF00227CF2 /* MemoAtGlance WatchKit App */,
 			);
@@ -367,15 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F42B9731AE8034700227CF2 /* Main.storyboard in Resources */,
-				2F42B9781AE8034700227CF2 /* LaunchScreen.xib in Resources */,
 				2F42B9751AE8034700227CF2 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2F42B97B1AE8034700227CF2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,14 +372,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2F42B9791AE8034700227CF2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2F42B9841AE8034700227CF2 /* MemoAtGlanceTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2F42B98D1AE804EF00227CF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -437,11 +388,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2F42B97F1AE8034700227CF2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2F42B9671AE8034700227CF2 /* MemoAtGlance */;
-			targetProxy = 2F42B97E1AE8034700227CF2 /* PBXContainerItemProxy */;
-		};
 		2F42B9A01AE804EF00227CF2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2F42B99C1AE804EF00227CF2 /* MemoAtGlance WatchKit App */;
@@ -451,6 +397,11 @@
 			isa = PBXTargetDependency;
 			target = 2F42B9901AE804EF00227CF2 /* MemoAtGlance WatchKit Extension */;
 			targetProxy = 2F42B9A91AE804EF00227CF2 /* PBXContainerItemProxy */;
+		};
+		2F577D4E1AF59BAB00FB37A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F42B99C1AE804EF00227CF2 /* MemoAtGlance WatchKit App */;
+			targetProxy = 2F577D4D1AF59BAB00FB37A5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -499,7 +450,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -543,7 +494,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Akira Suzuki (3H2MK9FR2S)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -573,7 +525,7 @@
 				INFOPLIST_FILE = MemoAtGlance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a82d9967-da96-4cb8-b715-0e320912b19d";
 			};
 			name = Debug;
 		};
@@ -582,46 +534,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MemoAtGlance/MemoAtGlance.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Akira Suzuki (3H2MK9FR2S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Akira Suzuki (3H2MK9FR2S)";
 				INFOPLIST_FILE = MemoAtGlance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		2F42B98B1AE8034700227CF2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MemoAtGlanceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemoAtGlance.app/MemoAtGlance";
-			};
-			name = Debug;
-		};
-		2F42B98C1AE8034700227CF2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MemoAtGlanceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemoAtGlance.app/MemoAtGlance";
+				PROVISIONING_PROFILE = "a82d9967-da96-4cb8-b715-0e320912b19d";
 			};
 			name = Release;
 		};
@@ -630,6 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -638,6 +557,7 @@
 				INFOPLIST_FILE = "MemoAtGlance WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2d48b811-b572-4061-8725-436da8504bcb";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -648,11 +568,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Akira Suzuki (3H2MK9FR2S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Akira Suzuki (3H2MK9FR2S)";
 				IBSC_MODULE = MemoAtGlance_WatchKit_Extension;
 				INFOPLIST_FILE = "MemoAtGlance WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2d48b811-b572-4061-8725-436da8504bcb";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -672,7 +594,7 @@
 				INFOPLIST_FILE = "MemoAtGlance WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "09e1a9fc-f769-42a9-ae7d-acc4212a69aa";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -681,12 +603,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "MemoAtGlance WatchKit Extension/MemoAtGlance WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Akira Suzuki (3H2MK9FR2S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Akira Suzuki (3H2MK9FR2S)";
 				INFOPLIST_FILE = "MemoAtGlance WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "09e1a9fc-f769-42a9-ae7d-acc4212a69aa";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -708,15 +630,6 @@
 			buildConfigurations = (
 				2F42B9881AE8034700227CF2 /* Debug */,
 				2F42B9891AE8034700227CF2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2F42B98A1AE8034700227CF2 /* Build configuration list for PBXNativeTarget "MemoAtGlanceTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2F42B98B1AE8034700227CF2 /* Debug */,
-				2F42B98C1AE8034700227CF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
